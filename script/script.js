@@ -1,14 +1,23 @@
-$(function() {
-    $(".header_button").on("click", header_oc);
-    $(".menu_button").on("click", menu);
-    $(".close").on("click", menu_close);
-    $(".URL_in_box_button").on("click", add);
-    $(".all_clear").on("click", all_clear_menu_open);
-    $(".all_clear_menu_button_yes").on("click", all_clear_yes);
-    $(".all_clear_menu_button_no").on("click", all_clear_no);
-    $(window).resize(block);
-    $(".block_no").on("click", block_cancel);
+$(".header_button").on("click", header_oc);
+$(".menu_button").on("click", menu_open);
+$(".close").on("click", menu_close);
+$(".URL_in_box_button").on("click", URL_add);
+$(".all_clear").on("click", all_clear_menu_open);
+$(".all_clear_menu_button_yes").on("click", all_clear_yes);
+$(".all_clear_menu_button_no").on("click", all_clear_no);
+$(window).resize(block);
+$(".block_no").on("click", block_cancel);
+$(window).keydown(function(e) {
+    if (e.keyCode == 27) {
+        menu_close();
+    }
 });
+
+var header_oc_num = 1; //ヘッダーが隠れてるか隠れてないか 1=隠れてない 0=隠れてる
+var count = 0; //addで使う13個以上入れないようにするためのカウント
+var check = 0; //addを利用して良いかのチェック
+var number_delete = 0 //URLをdeleteする際の番号
+var check_block = 0; //画面のサイズでブロックするかしないかの判 0==サイズ以下の場合ブロックする 1==サイズ以下はブロックしない
 
 block();
 
@@ -24,12 +33,6 @@ function YouTubeGetID(url) {
     return ID;
 }
 
-var header_oc_num = 1; //ヘッダーが隠れてるか隠れてないか 1=隠れてない 0=隠れてる
-var count = 0; //addで使う13個以上入れないようにするためのカウント
-var check = 0; //addを利用して良いかのチェック
-var number_delete = 0 //URLをdeleteする際の番号
-var check_block = 0; //画面のサイズでブロックするかしないかの判 0==サイズ以下の場合ブロックする 1==サイズ以下はブロックしない
-
 function header_oc() {
     if (header_oc_num == 1) {
         $(".header").css("top", "-50px");
@@ -42,7 +45,7 @@ function header_oc() {
     }
 }
 
-function menu() {
+function menu_open() {
     if (header_oc_num == 1) {
         $(".header").css("top", "-50px");
         $(".header_button").css("transform", "rotateX(180deg)");
@@ -67,7 +70,7 @@ function menu_close() {
     }
 }
 
-function add() {
+function URL_add() {
     if (check == 0) {
         if ($(".URL_in_box").val() == "") {
             notification_noURL();
@@ -254,9 +257,3 @@ function block_cancel() {
         clearInterval(timer);
     }
 }
-
-$(window).keydown(function(e) {
-    if (e.keyCode == 27) {
-        menu_close();
-    }
-});
