@@ -14,10 +14,10 @@ $(window).keydown(function(e) {
 });
 
 var header_oc_num = 1; //ヘッダーが隠れてるか隠れてないか 1=隠れてない 0=隠れてる
-var count = 0; //addで使う13個以上入れないようにするためのカウント
-var check = 0; //addを利用して良いかのチェック
+var count = 0; //addで使うURLを13個以上入れないようにするためのカウント
+var check = 0; //add関数を利用して良いかのチェック 0=利用OK 1=利用NG
 var number_delete = 0 //URLをdeleteする際の番号
-var check_block = 0; //画面のサイズでブロックするかしないかの判 0==サイズ以下の場合ブロックする 1==サイズ以下はブロックしない
+var check_block = 0; //画面のサイズでブロックするかしないかの判断 0==サイズ以下の場合はブロックする 1==サイズ以下の場合はブロックしない
 
 block();
 
