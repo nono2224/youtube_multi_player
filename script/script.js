@@ -6,6 +6,7 @@ $(".all_clear").on("click", all_clear_menu_open);
 $(".all_clear_menu_button_yes").on("click", all_clear_yes);
 $(".all_clear_menu_button_no").on("click", all_clear_no);
 //$(window).resize(block);
+$(window).resize(notification_size_change);
 $(window).resize(size_change);
 $(".block_no").on("click", block_cancel);
 $(window).keydown(function(e) {
@@ -128,8 +129,12 @@ function all_clear_menu_open() {
 }
 
 function all_clear_menu_close() {
+    if (1300 <= $(window).width()) {
+        $(".all_clear_menu").css("left", "calc(-25vw + -10px)");
+    } else if (1100 <= $(window).width() && $(window).width() < 1300) {
+        $(".all_clear_menu").css("left", "calc(-30vw + -10px)");
+    }
     black_off();
-    $(".all_clear_menu").css("left", "calc(-30vw + -10px)");
 }
 
 function all_clear_yes() {
@@ -161,7 +166,11 @@ function notification_noURL() {
     }
 
     function zero4() {
-        $(".notification").css("right", "calc(-30vw + -10px)");
+        if (1300 <= $(window).width()) {
+            $(".notification").css("right", "calc(-25vw + -10px)");
+        } else if (1100 <= $(window).width() && $(window).width() < 1300) {
+            $(".notification").css("right", "calc(-30vw + -10px)");
+        }
         clearInterval(timer2);
     }
 
@@ -181,7 +190,11 @@ function notification_up13() {
     var timer2 = setInterval(zero7, 4500);
 
     function zero6() {
-        $(".notification").css("right", "calc(-30vw + -10px)");
+        if (1300 <= $(window).width()) {
+            $(".notification").css("right", "calc(-25vw + -10px)");
+        } else if (1100 <= $(window).width() && $(window).width() < 1300) {
+            $(".notification").css("right", "calc(-30vw + -10px)");
+        }
         clearInterval(timer1);
     }
 
@@ -261,5 +274,15 @@ function block_cancel() {
         $(".block").css("display", "none");
         $(".block").css("opacity", "1");
         clearInterval(timer);
+    }
+}
+
+function notification_size_change() {
+    if (1300 <= $(window).width()) {
+        $(".notification").css("right", "calc(-25vw + -10px)");
+        $(".all_clear_menu").css("left", "calc(-25vw + -10px)");
+    } else if (1100 <= $(window).width() && $(window).width() < 1300) {
+        $(".notification").css("right", "calc(-30vw + -10px)");
+        $(".all_clear_menu").css("left", "calc(-30vw + -10px)");
     }
 }
