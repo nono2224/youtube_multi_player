@@ -20,6 +20,7 @@ var count = 0; //addで使うURLを13個以上入れないようにするため�
 var check = 0; //add関数を利用して良いかのチェック 0=利用OK 1=利用NG
 var number_delete = 0 //URLをdeleteする際の番号
 var check_block = 0; //画面のサイズでブロックするかしないかの判断 0==サイズ以下の場合はブロックする 1==サイズ以下の場合はブロックしない
+var all_clear_menu = 0; //all_clear_menuが開いているかを保存する関数 0=閉じている 1=開いている
 
 block();
 
@@ -124,6 +125,7 @@ function black_off() {
 }
 
 function all_clear_menu_open() {
+    all_clear_menu = 1;
     black_on();
     $(".all_clear_menu").css("left", "10px");
 }
@@ -135,6 +137,7 @@ function all_clear_menu_close() {
         $(".all_clear_menu").css("left", "calc(-30vw + -10px)");
     }
     black_off();
+    all_clear_menu = 0;
 }
 
 function all_clear_yes() {
@@ -278,11 +281,16 @@ function block_cancel() {
 }
 
 function notification_size_change() {
-    if (1300 <= $(window).width()) {
-        $(".notification").css("right", "calc(-25vw + -10px)");
-        $(".all_clear_menu").css("left", "calc(-25vw + -10px)");
-    } else if (1100 <= $(window).width() && $(window).width() < 1300) {
-        $(".notification").css("right", "calc(-30vw + -10px)");
-        $(".all_clear_menu").css("left", "calc(-30vw + -10px)");
+    if (all_clear_menu == 1 || check == 1) {
+
+    } else {
+        if (1300 <= $(window).width()) {
+            $(".notification").css("right", "calc(-25vw + -10px)");
+            $(".all_clear_menu").css("left", "calc(-25vw + -10px)");
+        } else if (1100 <= $(window).width() && $(window).width() < 1300) {
+            $(".notification").css("right", "calc(-30vw + -10px)");
+            $(".all_clear_menu").css("left", "calc(-30vw + -10px)");
+        }
     }
+
 }
