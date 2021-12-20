@@ -233,7 +233,7 @@ function mobile_check() {
     }
 }
 
-function block() {
+/*function block() {
     if (check_block == 1) {
 
     } else {
@@ -243,7 +243,7 @@ function block() {
             $(".block").css("display", "none");
         }
     }
-}
+}*/
 
 function block_cancel() {
     $(".block").css("opacity", "0");
