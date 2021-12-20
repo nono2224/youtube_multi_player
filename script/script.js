@@ -5,7 +5,9 @@ $(".URL_in_box_button").on("click", URL_add);
 $(".all_clear").on("click", all_clear_menu_open);
 $(".all_clear_menu_button_yes").on("click", all_clear_yes);
 $(".all_clear_menu_button_no").on("click", all_clear_no);
-$(window).resize(block);
+//$(window).resize(block);
+$(window).resize(notification_size_change);
+$(window).resize(size_change);
 $(".block_no").on("click", block_cancel);
 $(window).keydown(function(e) {
     if (e.keyCode == 27) {
@@ -18,6 +20,7 @@ var count = 0; //addで使うURLを13個以上入れないようにするため�
 var check = 0; //add関数を利用して良いかのチェック 0=利用OK 1=利用NG
 var number_delete = 0 //URLをdeleteする際の番号
 var check_block = 0; //画面のサイズでブロックするかしないかの判断 0==サイズ以下の場合はブロックする 1==サイズ以下の場合はブロックしない
+var all_clear_menu = 0; //all_clear_menuが開いているかを保存する関数 0=閉じている 1=開いている
 
 block();
 
@@ -122,13 +125,25 @@ function black_off() {
 }
 
 function all_clear_menu_open() {
+    all_clear_menu = 1;
     black_on();
     $(".all_clear_menu").css("left", "10px");
 }
 
 function all_clear_menu_close() {
+    if (1300 <= $(window).width()) {
+        $(".all_clear_menu").css("left", "calc(-25vw + -10px)");
+    } else if (1100 <= $(window).width() && $(window).width() < 1300) {
+        $(".all_clear_menu").css("left", "calc(-30vw + -10px)");
+    } else if (850 <= $(window).width() && $(window).width() < 1100) {
+        $(".all_clear_menu").css("left", "calc(-40vw + -10px)");
+    } else if (700 <= $(window).width() && $(window).width() < 850) {
+        $(".all_clear_menu").css("left", "calc(-50vw + -10px)");
+    } else if ($(window).width() < 700) {
+        $(".all_clear_menu").css("left", "calc(-75vw + -10px)");
+    }
     black_off();
-    $(".all_clear_menu").css("left", "calc(-25vw + -10px)");
+    all_clear_menu = 0;
 }
 
 function all_clear_yes() {
@@ -160,7 +175,17 @@ function notification_noURL() {
     }
 
     function zero4() {
-        $(".notification").css("right", "calc(-25vw + -10px)");
+        if (1300 <= $(window).width()) {
+            $(".notification").css("right", "calc(-25vw + -10px)");
+        } else if (1100 <= $(window).width() && $(window).width() < 1300) {
+            $(".notification").css("right", "calc(-30vw + -10px)");
+        } else if (850 <= $(window).width() && $(window).width() < 1100) {
+            $(".notification").css("right", "calc(-40vw + -10px)");
+        } else if (700 <= $(window).width() && $(window).width() < 850) {
+            $(".notification").css("right", "calc(-50vw + -10px)");
+        } else if ($(window).width() < 700) {
+            $(".notification").css("right", "calc(-75vw + -10px)");
+        }
         clearInterval(timer2);
     }
 
@@ -180,7 +205,17 @@ function notification_up13() {
     var timer2 = setInterval(zero7, 4500);
 
     function zero6() {
-        $(".notification").css("right", "calc(-25vw + -10px)");
+        if (1300 <= $(window).width()) {
+            $(".notification").css("right", "calc(-25vw + -10px)");
+        } else if (1100 <= $(window).width() && $(window).width() < 1300) {
+            $(".notification").css("right", "calc(-30vw + -10px)");
+        } else if (850 <= $(window).width() && $(window).width() < 1100) {
+            $(".notification").css("right", "calc(-40vw + -10px)");
+        } else if (700 <= $(window).width() && $(window).width() < 850) {
+            $(".notification").css("right", "calc(-50vw + -10px)");
+        } else if ($(window).width() < 700) {
+            $(".notification").css("right", "calc(-75vw + -10px)");
+        }
         clearInterval(timer1);
     }
 
@@ -196,8 +231,13 @@ function size_change() {
         $("iframe").css("width", "100vw");
         $("iframe").css("height", "100vh");
     } else if (count == 2) {
-        $("iframe").css("width", "50vw");
-        $("iframe").css("height", "100vh");
+        if ($("html").width() >= 1300) {
+            $("iframe").css("width", "50vw");
+            $("iframe").css("height", "100vh");
+        } else if ($("html").width() <= 1299) {
+            $("iframe").css("width", "100vw");
+            $("iframe").css("height", "50vh");
+        }
     } else if (count == 3 || count == 4) {
         $("iframe").css("width", "50vw");
         $("iframe").css("height", "50vh");
@@ -233,7 +273,7 @@ function mobile_check() {
     }
 }
 
-function block() {
+/*function block() {
     if (check_block == 1) {
 
     } else {
@@ -243,7 +283,7 @@ function block() {
             $(".block").css("display", "none");
         }
     }
-}
+}*/
 
 function block_cancel() {
     $(".block").css("opacity", "0");
@@ -255,5 +295,28 @@ function block_cancel() {
         $(".block").css("display", "none");
         $(".block").css("opacity", "1");
         clearInterval(timer);
+    }
+}
+
+function notification_size_change() {
+    if (all_clear_menu == 1 || check == 1) {
+
+    } else {
+        if (1300 <= $(window).width()) {
+            $(".notification").css("right", "calc(-25vw + -10px)");
+            $(".all_clear_menu").css("left", "calc(-25vw + -10px)");
+        } else if (1100 <= $(window).width() && $(window).width() < 1300) {
+            $(".notification").css("right", "calc(-30vw + -10px)");
+            $(".all_clear_menu").css("left", "calc(-30vw + -10px)");
+        } else if (850 <= $(window).width() && $(window).width() < 1100) {
+            $(".notification").css("right", "calc(-40vw + -10px)");
+            $(".all_clear_menu").css("left", "calc(-40vw + -10px)");
+        } else if (700 <= $(window).width() && $(window).width() < 850) {
+            $(".notification").css("right", "calc(-50vw + -10px)");
+            $(".all_clear_menu").css("left", "calc(-50vw + -10px)");
+        } else if ($(window).width() < 700) {
+            $(".notification").css("right", "calc(-75vw + -10px)");
+            $(".all_clear_menu").css("left", "calc(-75vw + -10px)");
+        }
     }
 }

@@ -361,7 +361,7 @@ html body .menu .select .change_area .URL_in .URL_in_box_button::before {
 }
 
 html body .menu .select .change_area .URL_in .URL_in_box_button:hover::before {
-  width: 150px;
+  width: 100%;
   right: 0;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);

@@ -1,0 +1,16 @@
+html {
+    body {
+        .menu {
+            .select {
+                .all_clear_menu {
+                    width: 30vw;
+                    left: calc(-30vw + -10px);
+                }
+                .notification {
+                    width: 30vw;
+                    right: calc(-30vw + -10px);
+                }
+            }
+        }
+    }
+}

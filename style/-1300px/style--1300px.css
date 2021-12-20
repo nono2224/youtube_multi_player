@@ -1,0 +1,10 @@
+html body .menu .select .all_clear_menu {
+  width: 30vw;
+  left: calc(-30vw + -10px);
+}
+
+html body .menu .select .notification {
+  width: 30vw;
+  right: calc(-30vw + -10px);
+}
+/*# sourceMappingURL=style--1300px.css.map */
