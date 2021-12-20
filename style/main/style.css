@@ -164,6 +164,7 @@ html body .menu {
 
 html body .menu .select {
   display: none;
+  position: relative;
 }
 
 html body .menu .select .all_clear_menu {
@@ -386,6 +387,10 @@ html body .menu .select .change_area .URL_in .URL_in_box_button:hover::after {
 }
 
 html body .menu .select .change_area .URL_area {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   width: 100%;
   height: calc(100% - 40px);
   margin-top: 40px;
@@ -400,6 +405,9 @@ html body .menu .select .change_area .URL_area .URL_set {
 
 html body .menu .select .change_area .URL_area .URL_set .URL {
   position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   width: 100%;
   line-height: 40px;
   border-bottom: white solid 1px;

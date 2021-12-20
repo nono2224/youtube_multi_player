@@ -131,6 +131,7 @@ html {
             transition: background-color 0.5s, opacity 0.5s;
             .select {
                 display: none;
+                position: relative;
                 .all_clear_menu {
                     width: 25vw;
                     height: auto;
@@ -303,6 +304,9 @@ html {
                         }
                     }
                     .URL_area {
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
                         width: 100%;
                         height: calc(100% - 40px);
                         margin-top: 40px;
@@ -313,6 +317,8 @@ html {
                             margin-left: 10%;
                             .URL {
                                 position: relative;
+                                left: 50%;
+                                transform: translateX(-50%);
                                 width: 100%;
                                 line-height: 40px;
                                 border-bottom: white solid 1px;
