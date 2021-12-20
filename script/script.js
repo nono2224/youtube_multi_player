@@ -129,11 +129,7 @@ function all_clear_menu_open() {
 
 function all_clear_menu_close() {
     black_off();
-    if ($("html").width() >= 1300) {
-        $(".all_clear_menu").css("left", "calc(-25vw + -10px)");
-    } else if ($("html").width() <= 1299) {
-        $(".all_clear_menu").css("left", "calc(-40vw + -10px)");
-    }
+    $(".all_clear_menu").css("left", "calc(-40vw + -10px)");
 }
 
 function all_clear_yes() {
@@ -165,11 +161,7 @@ function notification_noURL() {
     }
 
     function zero4() {
-        if ($("html").width() >= 1300) {
-            $(".notification").css("right", "calc(-25vw + -10px)");
-        } else if ($("html").width() <= 1299) {
-            $(".notification").css("right", "calc(-40vw + -10px)");
-        }
+        $(".notification").css("right", "calc(-40vw + -10px)");
         clearInterval(timer2);
     }
 
@@ -189,11 +181,7 @@ function notification_up13() {
     var timer2 = setInterval(zero7, 4500);
 
     function zero6() {
-        if ($("html").width() >= 1300) {
-            $(".notification").css("right", "calc(-25vw + -10px)");
-        } else if ($("html").width() <= 1299) {
-            $(".notification").css("right", "calc(-40vw + -10px)");
-        }
+        $(".notification").css("right", "calc(-40vw + -10px)");
         clearInterval(timer1);
     }
 
