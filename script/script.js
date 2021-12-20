@@ -129,7 +129,7 @@ function all_clear_menu_open() {
 
 function all_clear_menu_close() {
     black_off();
-    $(".all_clear_menu").css("left", "calc(-30vw + -10px)");
+    $(".all_clear_menu").css("left", "calc(-40vw + -10px)");
 }
 
 function all_clear_yes() {
@@ -161,7 +161,7 @@ function notification_noURL() {
     }
 
     function zero4() {
-        $(".notification").css("right", "calc(-30vw + -10px)");
+        $(".notification").css("right", "calc(-40vw + -10px)");
         clearInterval(timer2);
     }
 
@@ -181,7 +181,7 @@ function notification_up13() {
     var timer2 = setInterval(zero7, 4500);
 
     function zero6() {
-        $(".notification").css("right", "calc(-30vw + -10px)");
+        $(".notification").css("right", "calc(-40vw + -10px)");
         clearInterval(timer1);
     }
 
