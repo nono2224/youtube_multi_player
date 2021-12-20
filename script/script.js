@@ -5,7 +5,7 @@ $(".URL_in_box_button").on("click", URL_add);
 $(".all_clear").on("click", all_clear_menu_open);
 $(".all_clear_menu_button_yes").on("click", all_clear_yes);
 $(".all_clear_menu_button_no").on("click", all_clear_no);
-//$(window).resize(block);
+$(window).resize(block);
 $(window).resize(notification_size_change);
 $(window).resize(size_change);
 $(".block_no").on("click", block_cancel);
@@ -253,15 +253,6 @@ function size_change() {
     }
 }
 
-function size_check() {
-    var width = $("html").width();
-    if (width < 1300) {
-        return 1;
-    } else {
-        return 0;
-    }
-}
-
 function mobile_check() {
     var ua = navigator.userAgent;
     if ((ua.indexOf('iPhone') > 0 || ua.indexOf('Android') > 0) && ua.indexOf('Mobile') > 0) {
@@ -273,17 +264,17 @@ function mobile_check() {
     }
 }
 
-/*function block() {
+function block() {
     if (check_block == 1) {
 
     } else {
-        if (size_check() == 1 || mobile_check() == 1) {
+        if (mobile_check() == 1) {
             $(".block").css("display", "block");
         } else {
             $(".block").css("display", "none");
         }
     }
-}*/
+}
 
 function block_cancel() {
     $(".block").css("opacity", "0");
