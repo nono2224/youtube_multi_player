@@ -133,6 +133,8 @@ function all_clear_menu_close() {
         $(".all_clear_menu").css("left", "calc(-25vw + -10px)");
     } else if (1100 <= $(window).width() && $(window).width() < 1300) {
         $(".all_clear_menu").css("left", "calc(-30vw + -10px)");
+    } else if (850 <= $(window).width() && $(window).width() < 1100) {
+        $(".all_clear_menu").css("left", "calc(-40vw + -10px)");
     }
     black_off();
 }
@@ -170,6 +172,8 @@ function notification_noURL() {
             $(".notification").css("right", "calc(-25vw + -10px)");
         } else if (1100 <= $(window).width() && $(window).width() < 1300) {
             $(".notification").css("right", "calc(-30vw + -10px)");
+        } else if (850 <= $(window).width() && $(window).width() < 1100) {
+            $(".notification").css("right", "calc(-40vw + -10px)");
         }
         clearInterval(timer2);
     }
@@ -194,6 +198,8 @@ function notification_up13() {
             $(".notification").css("right", "calc(-25vw + -10px)");
         } else if (1100 <= $(window).width() && $(window).width() < 1300) {
             $(".notification").css("right", "calc(-30vw + -10px)");
+        } else if (850 <= $(window).width() && $(window).width() < 1100) {
+            $(".notification").css("right", "calc(-40vw + -10px)");
         }
         clearInterval(timer1);
     }
@@ -284,5 +290,8 @@ function notification_size_change() {
     } else if (1100 <= $(window).width() && $(window).width() < 1300) {
         $(".notification").css("right", "calc(-30vw + -10px)");
         $(".all_clear_menu").css("left", "calc(-30vw + -10px)");
+    } else if (850 <= $(window).width() && $(window).width() < 1100) {
+        $(".notification").css("right", "calc(-40vw + -10px)");
+        $(".all_clear_menu").css("left", "calc(-40vw + -10px)");
     }
 }
