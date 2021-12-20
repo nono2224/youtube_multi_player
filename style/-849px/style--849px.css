@@ -1,1 +1,10 @@
-/* No CSS *//*# sourceMappingURL=style--849px.css.map */
+html body .menu .select .all_clear_menu {
+  width: 50vw;
+  left: calc(-50vw + -10px);
+}
+
+html body .menu .select .notification {
+  width: 50vw;
+  right: calc(-50vw + -10px);
+}
+/*# sourceMappingURL=style--849px.css.map */
