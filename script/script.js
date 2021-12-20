@@ -308,7 +308,6 @@ function notification_size_change() {
         } else if (700 <= $(window).width() && $(window).width() < 850) {
             $(".notification").css("right", "calc(-50vw + -10px)");
             $(".all_clear_menu").css("left", "calc(-50vw + -10px)");
-
         }
     }
 }
