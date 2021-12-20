@@ -5,7 +5,8 @@ $(".URL_in_box_button").on("click", URL_add);
 $(".all_clear").on("click", all_clear_menu_open);
 $(".all_clear_menu_button_yes").on("click", all_clear_yes);
 $(".all_clear_menu_button_no").on("click", all_clear_no);
-$(window).resize(block);
+//$(window).resize(block);
+$(window).resize(size_change);
 $(".block_no").on("click", block_cancel);
 $(window).keydown(function(e) {
     if (e.keyCode == 27) {
@@ -128,7 +129,11 @@ function all_clear_menu_open() {
 
 function all_clear_menu_close() {
     black_off();
-    $(".all_clear_menu").css("left", "calc(-25vw + -10px)");
+    if ($("html").width() >= 1300) {
+        $(".all_clear_menu").css("left", "calc(-25vw + -10px)");
+    } else if ($("html").width() <= 1299) {
+        $(".all_clear_menu").css("left", "calc(-40vw + -10px)");
+    }
 }
 
 function all_clear_yes() {
@@ -160,7 +165,11 @@ function notification_noURL() {
     }
 
     function zero4() {
-        $(".notification").css("right", "calc(-25vw + -10px)");
+        if ($("html").width() >= 1300) {
+            $(".notification").css("right", "calc(-25vw + -10px)");
+        } else if ($("html").width() <= 1299) {
+            $(".notification").css("right", "calc(-40vw + -10px)");
+        }
         clearInterval(timer2);
     }
 
@@ -180,7 +189,11 @@ function notification_up13() {
     var timer2 = setInterval(zero7, 4500);
 
     function zero6() {
-        $(".notification").css("right", "calc(-25vw + -10px)");
+        if ($("html").width() >= 1300) {
+            $(".notification").css("right", "calc(-25vw + -10px)");
+        } else if ($("html").width() <= 1299) {
+            $(".notification").css("right", "calc(-40vw + -10px)");
+        }
         clearInterval(timer1);
     }
 
@@ -196,8 +209,13 @@ function size_change() {
         $("iframe").css("width", "100vw");
         $("iframe").css("height", "100vh");
     } else if (count == 2) {
-        $("iframe").css("width", "50vw");
-        $("iframe").css("height", "100vh");
+        if ($("html").width() >= 1300) {
+            $("iframe").css("width", "50vw");
+            $("iframe").css("height", "100vh");
+        } else if ($("html").width() <= 1299) {
+            $("iframe").css("width", "100vw");
+            $("iframe").css("height", "50vh");
+        }
     } else if (count == 3 || count == 4) {
         $("iframe").css("width", "50vw");
         $("iframe").css("height", "50vh");
