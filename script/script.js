@@ -139,6 +139,8 @@ function all_clear_menu_close() {
         $(".all_clear_menu").css("left", "calc(-40vw + -10px)");
     } else if (700 <= $(window).width() && $(window).width() < 850) {
         $(".all_clear_menu").css("left", "calc(-50vw + -10px)");
+    } else if ($(window).width() < 700) {
+        $(".all_clear_menu").css("left", "calc(-75vw + -10px)");
     }
     black_off();
     all_clear_menu = 0;
@@ -181,6 +183,8 @@ function notification_noURL() {
             $(".notification").css("right", "calc(-40vw + -10px)");
         } else if (700 <= $(window).width() && $(window).width() < 850) {
             $(".notification").css("right", "calc(-50vw + -10px)");
+        } else if ($(window).width() < 700) {
+            $(".notification").css("right", "calc(-75vw + -10px)");
         }
         clearInterval(timer2);
     }
@@ -209,6 +213,8 @@ function notification_up13() {
             $(".notification").css("right", "calc(-40vw + -10px)");
         } else if (700 <= $(window).width() && $(window).width() < 850) {
             $(".notification").css("right", "calc(-50vw + -10px)");
+        } else if ($(window).width() < 700) {
+            $(".notification").css("right", "calc(-75vw + -10px)");
         }
         clearInterval(timer1);
     }
@@ -308,6 +314,9 @@ function notification_size_change() {
         } else if (700 <= $(window).width() && $(window).width() < 850) {
             $(".notification").css("right", "calc(-50vw + -10px)");
             $(".all_clear_menu").css("left", "calc(-50vw + -10px)");
+        } else if ($(window).width() < 700) {
+            $(".notification").css("right", "calc(-75vw + -10px)");
+            $(".all_clear_menu").css("left", "calc(-75vw + -10px)");
         }
     }
 }
