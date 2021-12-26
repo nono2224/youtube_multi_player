@@ -11,6 +11,7 @@ html {
         background-color: #fafafa;
         position: relative;
         z-index: -2;
+        overflow: hidden;
         font-family: 'Avenir', 'Helvetica Neue', 'Helvetica', 'Arial', 'Hiragino Sans', 'ヒラギノ角ゴシック', YuGothic, 'Yu Gothic', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic';
         .header {
             width: 100vw;
