@@ -14,6 +14,11 @@ $(window).keydown(function(e) {
         menu_close();
     }
 });
+$(".URL_in_box").keydown(function(e) {
+    if (e.keyCode == 13) {
+        URL_add();
+    }
+})
 
 var header_oc_num = 1; //ヘッダーが隠れてるか隠れてないか 1=隠れてない 0=隠れてる
 var count = 0; //addで使うURLを13個以上入れないようにするためのカウント
