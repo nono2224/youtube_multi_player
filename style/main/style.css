@@ -22,8 +22,8 @@ html body .header {
   width: 100vw;
   height: 50px;
   border-bottom: #00d9ff solid 1.5px;
-  background: -webkit-gradient(linear, left bottom, right top, from(#a8fff6), to(#ddfeff));
-  background: linear-gradient(to top right, #a8fff6, #ddfeff);
+  background: -webkit-gradient(linear, left bottom, right top, from(#cbfffa), to(azure));
+  background: linear-gradient(to top right, #cbfffa, azure);
   position: fixed;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -53,8 +53,8 @@ html body .header .name::before {
   width: 400px;
   background-color: black;
   bottom: 8px;
-  background: -webkit-gradient(linear, left top, right top, from(red), to(rgba(255, 148, 148, 0.432)));
-  background: linear-gradient(to right, red, rgba(255, 148, 148, 0.432));
+  background: -webkit-gradient(linear, left top, right top, from(#ff6f6f), to(rgba(255, 148, 148, 0.432)));
+  background: linear-gradient(to right, #ff6f6f, rgba(255, 148, 148, 0.432));
 }
 
 html body .header .menu_button {
