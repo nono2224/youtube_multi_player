@@ -15,8 +15,10 @@ $(window).keydown(function(e) {
     }
 });
 $(".URL_in_box").keydown(function(e) {
-    if (e.keyCode == 13) {
-        URL_add();
+    if (enter_yn == 1) {
+        if (e.keyCode == 13) {
+            URL_add();
+        }
     }
 })
 
@@ -26,6 +28,7 @@ var check = 0; //add関数を利用して良いかのチェック 0=利用OK 1=�
 var number_delete = 0 //URLをdeleteする際の番号
 var check_block = 0; //画面のサイズでブロックするかしないかの判断 0==サイズ以下の場合はブロックする 1==サイズ以下の場合はブロックしない
 var all_clear_menu = 0; //all_clear_menuが開いているかを保存する関数 0=閉じている 1=開いている
+var enter_yn = 0; //エンターキーによるURLの追加をしてよいかの判断 0=NG 1=OK
 
 block();
 
@@ -64,9 +67,11 @@ function menu_open() {
     $(".menu").css("height", "100vh");
     $(".select").css("display", "block")
     $(".menu").css("opacity", 1);
+    enter_yn = 1;
 }
 
 function menu_close() {
+    enter_yn = 0;
     $(".menu").css("opacity", 0);
     var timer = setInterval(zero, 500);
 
@@ -133,9 +138,11 @@ function all_clear_menu_open() {
     all_clear_menu = 1;
     black_on();
     $(".all_clear_menu").css("left", "10px");
+    enter_yn = 0;
 }
 
 function all_clear_menu_close() {
+    enter_yn = 1;
     if (1300 <= $(window).width()) {
         $(".all_clear_menu").css("left", "calc(-25vw + -10px)");
     } else if (1100 <= $(window).width() && $(window).width() < 1300) {
