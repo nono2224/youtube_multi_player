@@ -10,8 +10,10 @@ $(window).resize(notification_size_change);
 $(window).resize(size_change);
 $(".block_no").on("click", block_cancel);
 $(window).keydown(function(e) {
-    if (e.keyCode == 27) {
-        menu_close();
+    if (esc_yn == 1) {
+        if (e.keyCode == 27) {
+            menu_close();
+        }
     }
 });
 $(".URL_in_box").keydown(function(e) {
@@ -29,6 +31,7 @@ var number_delete = 0 //URLをdeleteする際の番号
 var check_block = 0; //画面のサイズでブロックするかしないかの判断 0==サイズ以下の場合はブロックする 1==サイズ以下の場合はブロックしない
 var all_clear_menu = 0; //all_clear_menuが開いているかを保存する関数 0=閉じている 1=開いている
 var enter_yn = 0; //エンターキーによるURLの追加をしてよいかの判断 0=NG 1=OK
+var esc_yn = 0; //エスケープキーによるメニュー画面を閉じる動作をしてよいかの判断 0=NG 1=OK
 
 block();
 
@@ -68,10 +71,12 @@ function menu_open() {
     $(".select").css("display", "block")
     $(".menu").css("opacity", 1);
     enter_yn = 1;
+    esc_yn = 1;
 }
 
 function menu_close() {
     enter_yn = 0;
+    esc_yn = 0;
     $(".menu").css("opacity", 0);
     var timer = setInterval(zero, 500);
 
@@ -139,10 +144,12 @@ function all_clear_menu_open() {
     black_on();
     $(".all_clear_menu").css("left", "10px");
     enter_yn = 0;
+    esc_yn = 0;
 }
 
 function all_clear_menu_close() {
     enter_yn = 1;
+    esc_yn = 1;
     if (1300 <= $(window).width()) {
         $(".all_clear_menu").css("left", "calc(-25vw + -10px)");
     } else if (1100 <= $(window).width() && $(window).width() < 1300) {
