@@ -566,6 +566,7 @@ html body .menu .select .license {
   bottom: 10px;
   opacity: 0.25;
   font-size: 0.9em;
+  cursor: default;
 }
 
 html body .main {
