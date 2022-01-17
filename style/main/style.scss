@@ -133,6 +133,8 @@ html {
             .select {
                 display: none;
                 position: relative;
+                width: 100vw;
+                height: 100vh;
                 .all_clear_menu {
                     width: 25vw;
                     height: auto;
@@ -435,6 +437,15 @@ html {
                 }
                 .close:hover::after {
                     transform: translate(-50%, -50%) rotateZ(135deg);
+                }
+                .license {
+                    display: inline-block;
+                    position: absolute;
+                    color: rgb(179, 179, 179);
+                    right: 10px;
+                    bottom: 10px;
+                    opacity: 0.25;
+                    font-size: 0.9em;
                 }
             }
         }

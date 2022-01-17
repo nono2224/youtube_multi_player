@@ -166,6 +166,8 @@ html body .menu {
 html body .menu .select {
   display: none;
   position: relative;
+  width: 100vw;
+  height: 100vh;
 }
 
 html body .menu .select .all_clear_menu {
@@ -554,6 +556,16 @@ html body .menu .select .close::after {
 html body .menu .select .close:hover::after {
   -webkit-transform: translate(-50%, -50%) rotateZ(135deg);
           transform: translate(-50%, -50%) rotateZ(135deg);
+}
+
+html body .menu .select .license {
+  display: inline-block;
+  position: absolute;
+  color: #b3b3b3;
+  right: 10px;
+  bottom: 10px;
+  opacity: 0.25;
+  font-size: 0.9em;
 }
 
 html body .main {
