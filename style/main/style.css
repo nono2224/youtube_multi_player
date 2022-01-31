@@ -454,6 +454,7 @@ html body .menu .select .change_area .URL_area .URL_set .delete {
           transform: translate(0, -50%) rotateZ(45deg);
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 html body .menu .select .change_area .URL_area .URL_set .delete::before {
